@@ -62,15 +62,19 @@ public:
         number1 = new QTextBrowser(centralwidget);
         number1->setObjectName(QString::fromUtf8("number1"));
         number1->setGeometry(QRect(20, 10, 81, 81));
+        number1->setMouseTracking(false);
         number2 = new QTextBrowser(centralwidget);
         number2->setObjectName(QString::fromUtf8("number2"));
         number2->setGeometry(QRect(110, 10, 81, 81));
+        number2->setMouseTracking(false);
         number3 = new QTextBrowser(centralwidget);
         number3->setObjectName(QString::fromUtf8("number3"));
         number3->setGeometry(QRect(200, 10, 81, 81));
+        number3->setMouseTracking(false);
         number4 = new QTextBrowser(centralwidget);
         number4->setObjectName(QString::fromUtf8("number4"));
         number4->setGeometry(QRect(290, 10, 81, 81));
+        number4->setMouseTracking(false);
         button3 = new QPushButton(centralwidget);
         button3->setObjectName(QString::fromUtf8("button3"));
         button3->setGeometry(QRect(260, 110, 111, 111));
@@ -109,8 +113,34 @@ public:
         resetButton->setObjectName(QString::fromUtf8("resetButton"));
         resetButton->setGeometry(QRect(20, 470, 111, 111));
         resultWidget = new QTableWidget(centralwidget);
+        if (resultWidget->columnCount() < 3)
+            resultWidget->setColumnCount(3);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        resultWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        resultWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        resultWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         resultWidget->setObjectName(QString::fromUtf8("resultWidget"));
         resultWidget->setGeometry(QRect(400, 110, 371, 391));
+        resultWidget->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
+        resultWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        resultWidget->setTabKeyNavigation(true);
+        resultWidget->setProperty("showDropIndicator", QVariant(false));
+        resultWidget->setDragDropOverwriteMode(false);
+        resultWidget->setSelectionMode(QAbstractItemView::NoSelection);
+        resultWidget->setShowGrid(true);
+        resultWidget->setSortingEnabled(false);
+        resultWidget->horizontalHeader()->setVisible(true);
+        resultWidget->horizontalHeader()->setCascadingSectionResizes(false);
+        resultWidget->horizontalHeader()->setHighlightSections(true);
+        resultWidget->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
+        resultWidget->horizontalHeader()->setStretchLastSection(true);
+        resultWidget->verticalHeader()->setVisible(false);
+        resultWidget->verticalHeader()->setCascadingSectionResizes(false);
+        resultWidget->verticalHeader()->setHighlightSections(true);
+        resultWidget->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
+        resultWidget->verticalHeader()->setStretchLastSection(false);
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -137,6 +167,12 @@ public:
         button0->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         playButton->setText(QCoreApplication::translate("MainWindow", "\354\247\204\355\226\211\355\225\230\352\270\260", nullptr));
         resetButton->setText(QCoreApplication::translate("MainWindow", "\354\264\210\352\270\260\355\231\224", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = resultWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "\353\235\274\354\232\264\353\223\234", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = resultWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "\354\210\253\354\236\220", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = resultWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "\352\262\260\352\263\274", nullptr));
     } // retranslateUi
 
 };
