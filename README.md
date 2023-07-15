@@ -2,6 +2,8 @@
 
 Version 0.7.5
 
+![aaaa](https://github.com/mukhoplus/Number-Baseball-Game/assets/67003627/cc06564a-b27b-4b4e-b63e-69e7aef1f67b)
+
 ## Issues
 
 - 내부 텍스트 정렬, 크기 설정이 잘 되지 않는 문제
